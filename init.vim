@@ -1,56 +1,83 @@
+set nu tabstop=2 shiftwidth=2
+
 call plug#begin()
-	Plug 'junegunn/vim-easy-align'
-	Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-	" Tokyo Night Theme
-	Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-
-	" Troubleshoot
-	Plug 'folke/trouble.nvim'
-
-	"LSP
-	"Plug 'neovim/nvim-lspconfig'
-	
 	" Treesitter
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	
-	" Telescope
-	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-telescope/telescope.nvim'
-	
-	"Nvim tree
-	Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+	" Icons
+	Plug 'nvim-tree/nvim-web-devicons'
+
+	" Nvim Tree
 	Plug 'nvim-tree/nvim-tree.lua'
-	
-	" Ultisnps
-	"Plug 'SirVer/ultisnips'
-
-	" Nvim CMP
-	"Plug 'hrsh7th/cmp-nvim-lsp'
-	"Plug 'hrsh7th/cmp-buffer'
-	"Plug 'hrsh7th/cmp-path'
-	"Plug 'hrsh7th/cmp-cmdline'
-	"Plug 'hrsh7th/nvim-cmp'
-	"Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-	
-	" COC Nvim
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	
-	" Comment Plugin 
-	Plug 'preservim/nerdcommenter'
-
-	" Terminal
-	Plug 'akinsho/toggleterm.nvim'
 
 	" Barbar
+	Plug 'lewis6991/gitsigns.nvim'
 	Plug 'romgrk/barbar.nvim'
+
+	" Comment
+	Plug 'tpope/vim-commentary'
 
 	" Lualine
 	Plug 'nvim-lualine/lualine.nvim'
+
+	" Better Escape
+	Plug 'jdhao/better-escape.vim'
+
+	" Wilder
+	if has('nvim')
+		function! UpdateRemotePlugins(...)
+			" Needed to refresh runtime files
+			let &rtp=&rtp
+			UpdateRemotePlugins
+		endfunction
+
+		Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
+	else
+		Plug 'gelguy/wilder.nvim'
+
+		" To use Python remote plugin features in Vim, can be skipped
+		Plug 'roxma/nvim-yarp'
+		Plug 'roxma/vim-hug-neovim-rpc'
+	endif
+
+	" Telescope
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+
+	" Dracula Color
+	Plug 'Mofiqul/dracula.nvim'
+
+	" LSP and CMP
+
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+
+	" For vsnip users.
+	" Plug 'hrsh7th/cmp-vsnip'
+	" Plug 'hrsh7th/vim-vsnip'
+
+	" For luasnip users.
+	Plug 'L3MON4D3/LuaSnip'
+	Plug 'saadparwaiz1/cmp_luasnip'
+
+	" For ultisnips users.
+	" Plug 'SirVer/ultisnips'
+	" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+	" For snippy users.
+	" Plug 'dcampos/nvim-snippy'
+	" Plug 'dcampos/cmp-snippy'
+
+
 call plug#end()
 
-lua require('configs.taufik')
+colorscheme dracula-soft
 
-set nu tabstop=2 shiftwidth=2
-colorscheme tokyonight
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+lua << END
+	require('configs')
+END
