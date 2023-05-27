@@ -76,8 +76,6 @@ call plug#begin()
 
 call plug#end()
 
-colorscheme dracula-soft
-
 lua << END
 	require('configs')
 END
