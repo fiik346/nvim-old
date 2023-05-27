@@ -6,5 +6,7 @@ require('barbar').setup{
 	}
 }
 
+require('gitsigns').setup()
+
 require('autocomplete')
 require('lsp')
