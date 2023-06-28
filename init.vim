@@ -73,7 +73,7 @@ call plug#begin()
 	" Plug 'dcampos/nvim-snippy'
 	" Plug 'dcampos/cmp-snippy'
 
-
+	Plug 'jose-elias-alvarez/null-ls.nvim'
 call plug#end()
 
 lua << END

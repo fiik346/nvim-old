@@ -11,3 +11,4 @@ require('gitsigns').setup()
 
 require('autocomplete')
 require('lsp')
+require('formatting')

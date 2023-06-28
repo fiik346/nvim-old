@@ -1,7 +1,7 @@
 
 local dracula = require('dracula')
 dracula.setup({
-	transparent_bg = true, -- default false
+	transparent_bg = false, -- default false
 
 })
 vim.cmd("colorscheme dracula")
