@@ -74,6 +74,11 @@ call plug#begin()
 	" Plug 'dcampos/cmp-snippy'
 
 	Plug 'jose-elias-alvarez/null-ls.nvim'
+
+
+	" Indent
+	Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
 
 lua << END
