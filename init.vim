@@ -79,6 +79,9 @@ call plug#begin()
 	" Indent
 	Plug 'lukas-reineke/indent-blankline.nvim'
 
+	" ToggleTerm
+	Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
 call plug#end()
 
 lua << END
