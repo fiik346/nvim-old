@@ -73,7 +73,9 @@ call plug#begin()
 	" Plug 'dcampos/nvim-snippy'
 	" Plug 'dcampos/cmp-snippy'
 
-	Plug 'jose-elias-alvarez/null-ls.nvim'
+
+	" null-ls is no longer maintened
+	" Plug 'jose-elias-alvarez/null-ls.nvim'
 
 
 	" Indent
