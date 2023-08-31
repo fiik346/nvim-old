@@ -28,7 +28,8 @@ require("lazy").setup({
 	--- lualine
 	"nvim-lualine/lualine.nvim",
 	"jdhao/better-escape.vim",
-	"Mofiqul/dracula.nvim",
+
+	-- Wilder
 	"gelguy/wilder.nvim",
 
 	-- LSP Config
@@ -40,7 +41,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/nvim-cmp",
-	
+
 	-- utilsinp and cmp
 	"SirVer/ultisnips",
 	"quangnguyen30192/cmp-nvim-ultisnips",
@@ -52,14 +53,33 @@ require("lazy").setup({
 	"jdhao/better-escape.vim",
 
 	-- Telescope
-	 "nvim-lua/plenary.nvim",
-	 "nvim-telescope/telescope.nvim",
+	"nvim-lua/plenary.nvim",
+	"nvim-telescope/telescope.nvim",
 
-	 -- Indent
-	 "lukas-reineke/indent-blankline.nvim",
+	-- Indent
+	"lukas-reineke/indent-blankline.nvim",
 
-	 -- ToggleTerm (terminal)
-	 "akinsho/toggleterm.nvim"
+	-- ToggleTerm (terminal)
+	"akinsho/toggleterm.nvim",
+
+ -- Trouble
+	"folke/trouble.nvim",
+
+	-- Dracula Theme
+	{
+		"Mofiqul/dracula.nvim",
+		enabled= true,
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local dracula = require('dracula')
+			dracula.setup({
+				transparent_bg = false, -- default false
+
+			})
+			vim.cmd("colorscheme dracula")
+		end
+	}
 
 })
 
