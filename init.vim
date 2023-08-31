@@ -77,6 +77,8 @@ call plug#begin()
 	" null-ls is no longer maintened
 	" Plug 'jose-elias-alvarez/null-ls.nvim'
 
+	" trouble
+	" Plug "folke/trouble.nvim"
 
 	" Indent
 	Plug 'lukas-reineke/indent-blankline.nvim'

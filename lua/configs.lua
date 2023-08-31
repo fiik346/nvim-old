@@ -6,18 +6,18 @@ require('barbar').setup{
 	}
 }
 
-require("theme")
+require('theme')
 require('gitsigns').setup()
 
-require('autocomplete')
+require('wilder-config')
 require('lsp')
 require('formatting')
 
 -- indent
-require("indent_blankline").setup {
+require('indent_blankline').setup {
     -- for example, context is off by default, use this to turn it on
     show_current_context = true,
     show_current_context_start = true,
 }
 
-require("toggleterm").setup()
+require('toggleterm').setup()
