@@ -6,7 +6,6 @@ require('barbar').setup{
 	}
 }
 
--- require('theme')
 require('gitsigns').setup()
 
 require('wilder-config')
