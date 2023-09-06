@@ -5,5 +5,8 @@ return {
 	--},
 	config = function()
 		require("nvim-tree").setup()
+		local api = require("nvim-tree.api")
+		vim.g.mapleader = " "
+		vim.keymap.set("n", "<leader>fe",api.tree.toggle)
 	end
 }

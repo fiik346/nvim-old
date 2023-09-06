@@ -19,4 +19,5 @@ require("lazy").setup({
 	"jdhao/better-escape.vim",
 	"neovim/nvim-lspconfig",
 	"nvim-telescope/telescope.nvim",
+	"tpope/vim-commentary",
 })
