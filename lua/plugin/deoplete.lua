@@ -1,4 +1,0 @@
-return {
-	"Shougo/deoplete.nvim",
-}
-
