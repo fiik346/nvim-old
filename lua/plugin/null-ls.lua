@@ -12,8 +12,9 @@ return {
 				null_ls.builtins.formatting.prettierd,
 				null_ls.builtins.formatting.pg_format,
 				-- null_ls.builtins.formatting.rustfmt
-				-- null_ls.builtins.formatting.djhtml,
-				null_ls.builtins.formatting.curlylint,
+				-- null_ls.builtins.diagnostics.curlylint,
+				null_ls.builtins.diagnostics.djlint
+				null_ls.builtins.formatting.djhtml,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
