@@ -14,7 +14,9 @@ return {
 				-- null_ls.builtins.formatting.rustfmt
 				-- null_ls.builtins.diagnostics.curlylint,
 				null_ls.builtins.diagnostics.djlint,
-				null_ls.builtins.formatting.djhtml,
+				null_ls.builtins.formatting.djhtml.with({
+					extra_args = {"--tabwidth", 2}
+				}),
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
