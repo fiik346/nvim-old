@@ -13,7 +13,7 @@ return {
 				null_ls.builtins.formatting.pg_format,
 				-- null_ls.builtins.formatting.rustfmt
 				-- null_ls.builtins.diagnostics.curlylint,
-				null_ls.builtins.diagnostics.djlint
+				null_ls.builtins.diagnostics.djlint,
 				null_ls.builtins.formatting.djhtml,
 			},
 			on_attach = function(client, bufnr)
