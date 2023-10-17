@@ -9,14 +9,17 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.diagnostics.eslint,
 				-- null_ls.builtins.completion.spell,
-				null_ls.builtins.formatting.prettierd,
+				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.rustfmt,
 				null_ls.builtins.formatting.pg_format,
-				-- null_ls.builtins.formatting.rustfmt
 				-- null_ls.builtins.diagnostics.curlylint,
-				null_ls.builtins.diagnostics.djlint,
 				null_ls.builtins.formatting.djhtml.with({
 					extra_args = {"--tabwidth", 2}
 				}),
+				null_ls.builtins.diagnostics.djlint,
+				-- null_ls.builtins.diagnostics.sqlfluff.with({
+				-- 	extra_args = { "--dialect", "postgres" }, -- change to your dialect
+				-- }),
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
